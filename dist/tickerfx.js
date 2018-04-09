@@ -1,5 +1,18 @@
 (function(window, $) {
 
+    $.fn.tickerfx = function(options) {
+        var attrs = get_all_attrs(this);
+        options = $.extend({}, $.fn.tickerfx.defaults, options, attrs);
+        var ti = new TickerFXInstance(this);
+        if (options.onCompleted)
+            ti.onCompleted = options.onCompleted;
+        if (options.setter && options.setter in $.fn.tickerfx.setters)
+            ti._setter = $.fn.tickerfx.setters[options.setter];
+        if (options.autoStart)
+            ti.start();
+        return ti;
+    };
+
     $.fn.tickerfx.defaults = {
         setter: 'default',
         autoStart: false,
@@ -81,19 +94,6 @@
             ti.start();
         });
     }
-
-    $.fn.tickerfx = function(options) {
-        var attrs = get_all_attrs(this);
-        options = $.extend({}, $.fn.tickerfx.defaults, options, attrs);
-        var ti = new TickerFXInstance(this);
-        if (options.onCompleted)
-            ti.onCompleted = options.onCompleted;
-        if (options.setter && options.setter in $.fn.tickerfx.setters)
-            ti._setter = $.fn.tickerfx.setters[options.setter];
-        if (options.autoStart)
-            ti.start();
-        return ti;
-    };
 
     function TickerFXTextSetter(tfx, percentage, value) {
         var output = Math.ceil(value),
