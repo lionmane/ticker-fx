@@ -7,17 +7,15 @@ var sourcemaps = require('gulp-sourcemaps');
 // DEVELOPMENT Tasks
 
 gulp.task('js-minified', function(){
-    return gulp.src('tickerfx.js')
+    return gulp.src('src/*.js')
         .pipe(uglifyJS())
         .pipe(concat('tickerfx.min.js'))
         .pipe(gulp.dest('./dist/'))
 });
 
 gulp.task('js', function(){
-    return gulp.src('tickerfx.js')
-        .pipe(sourcemaps.init())
+    return gulp.src('src/*.js')
         .pipe(concat('tickerfx.js'))
-        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./dist/'))
 });
 

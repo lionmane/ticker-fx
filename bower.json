@@ -5,7 +5,7 @@
     "Mario J. Wunderlich <mario@lionmane.io>"
   ],
   "description": "A jQuery plugin to visually animate numeric values by counting up (or down)",
-  "main": "tickerfx.js",
+  "main": "dist/tickerfx.min.js",
   "keywords": [
     "jQuery",
     "LionMane",
