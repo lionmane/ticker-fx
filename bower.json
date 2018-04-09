@@ -1,0 +1,28 @@
+{
+  "name": "tickerfx",
+  "homepage": "https://github.com/lionmane/ticker-fx",
+  "authors": [
+    "Mario J. Wunderlich <mario@lionmane.io>"
+  ],
+  "description": "A jQuery plugin to visually animate numeric values by counting up (or down)",
+  "main": "tickerfx.js",
+  "keywords": [
+    "jQuery",
+    "LionMane",
+    "Ticker",
+    "TickerFX",
+    "jQuery",
+    "Plugin",
+    "Countdown",
+    "Countup",
+    "Animation"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
